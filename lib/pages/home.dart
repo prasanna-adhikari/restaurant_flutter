@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:restaurant/components/horizontal_listview.dart';
 import 'package:restaurant/widget/image_carousel.dart';
 class Home extends StatefulWidget {
   @override
@@ -117,7 +118,22 @@ class _HomeState extends State<Home> {
       ),
       body: ListView(
          children:[
-          Image_carousel()
+          // image carousel
+          Image_carousel(),
+           //categories
+           Padding(
+               padding: const EdgeInsets.all(10.0),
+              child: Text('Categories', style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+           ),
+           Categories(),
+           //popular
+           Padding(
+             padding: const EdgeInsets.fromLTRB(10.0,0,10,0),
+             child: Text('Popular', style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+           ),
+           Categories(),
+
+
 
          ]
 
