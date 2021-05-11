@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:restaurant/widget/image_carousel.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -114,29 +115,12 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      body: Container(
-          child: SizedBox(
-            height: 220.0,
-            width: double.infinity,
-            child: Carousel(
-              boxFit: BoxFit.cover,
-              autoplay: true,
-              animationCurve: Curves.fastOutSlowIn,
-              animationDuration: Duration(milliseconds: 1000),
-              dotSize: 6.0,
-              dotIncreasedColor: Color(0xFFFF335C),
-              dotBgColor: Colors.transparent,
-              dotPosition: DotPosition.bottomCenter,
-              dotVerticalPadding: 10.0,
-              showIndicator: true,
-              indicatorBgPadding: 7.0,
-              images: [
-                AssetImage('images/slide1.jpg'),
-                AssetImage('images/slide2.jpg'),
-                AssetImage('images/slide3.jpg'),
-              ],
-            ),
-          ),
+      body: ListView(
+         children:[
+          Image_carousel()
+
+         ]
+
         )
 
 
