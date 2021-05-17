@@ -22,8 +22,11 @@ class _HomeState extends State<Home> {
               onPressed: (){}
             ),
             IconButton(
+
               icon: Icon(Icons.shopping_cart),
-              onPressed: (){}
+              onPressed: (){
+                Navigator.pushNamed(context, '/cart');
+              }
             ),
 
         ],
@@ -71,7 +74,9 @@ class _HomeState extends State<Home> {
               ),
             ),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.pushNamed(context, '/cart');
+              },
               splashColor: Colors.grey[800],
               child: ListTile(
                 title: Text('Cart'),

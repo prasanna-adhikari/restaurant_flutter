@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant/pages/cart.dart';
 import 'package:restaurant/pages/home.dart';
 import 'package:restaurant/pages/productDetails.dart';
 void main() {
@@ -8,6 +9,7 @@ void main() {
     routes: {
       '/home':(context)=> Home(),
       '/productDetail':(context)=> ProductDetails(),
+      '/cart':(context)=> Cart(),
     },
   ));
 }
