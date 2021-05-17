@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:restaurant/components/horizontal_listview.dart';
+import 'package:restaurant/components/products.dart';
 import 'package:restaurant/widget/image_carousel.dart';
 class Home extends StatefulWidget {
   @override
@@ -73,6 +74,14 @@ class _HomeState extends State<Home> {
               onTap: (){},
               splashColor: Colors.grey[800],
               child: ListTile(
+                title: Text('Cart'),
+                leading: Icon(Icons.shopping_cart),
+              ),
+            ),
+            InkWell(
+              onTap: (){},
+              splashColor: Colors.grey[800],
+              child: ListTile(
                 title: Text('Favourites'),
                 leading: Icon(Icons.favorite),
               ),
@@ -117,6 +126,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: ListView(
+          scrollDirection: Axis.vertical,
          children:[
           // image carousel
           Image_carousel(),
@@ -128,10 +138,10 @@ class _HomeState extends State<Home> {
            Categories(),
            //popular
            Padding(
-             padding: const EdgeInsets.fromLTRB(10.0,0,10,0),
+             padding: const EdgeInsets.fromLTRB(10.0,15.0,10,0),
              child: Text('Popular', style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
            ),
-           Categories(),
+           Products(),
 
 
 

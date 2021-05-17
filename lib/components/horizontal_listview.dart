@@ -4,7 +4,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.0,
+      height: 100.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -24,33 +24,51 @@ class Categories extends StatelessWidget {
             image_location: 'images/french fries.jpg',
             image_caption: 'Snack',
           ),
-
-
         ],
       ),
     );
   }
 }
+
 class Items extends StatelessWidget {
   final String image_location;
   final String image_caption;
 
-  const Items({Key key, this.image_location, this.image_caption}) : super(key: key);
+  const Items({Key key, this.image_location, this.image_caption})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: InkWell(
-        onTap: (){},
-        child: Container(
-          width: 150.0,
-          height:120.0,
-          child: ListTile(
-            title: Image.asset(image_location,width: 120,height: 120,),
-            subtitle: Text(image_caption),
-          ),
-        ),
+        onTap: () {},
+        child: Stack(
+          children: [
+            Container(
 
+              width: 200.0,
+              child: ListTile(
+                title: Image.asset(
+                  image_location,
+                  fit: BoxFit.cover,
+
+                ),
+                subtitle: Text(image_caption),
+              ),
+            ),
+            Container(
+                width: 200.0,
+                alignment: Alignment.center,
+                child: Text(
+                  image_caption,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22.0),
+                )),
+          ],
+        ),
       ),
     );
   }
