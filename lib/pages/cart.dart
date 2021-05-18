@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant/components/cartItems.dart';
 
 import 'home.dart';
 
@@ -22,6 +23,8 @@ class _CartState extends State<Cart> {
         ],
         elevation: 0.0,
       ),
+
+      body: CartItems(),
       bottomNavigationBar: Container(
         color: Colors.white,
         child: Row(
